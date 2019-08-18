@@ -11,7 +11,7 @@ Simple Interface to interact with maldives meteriology
 	echo $rp->stationname;
     echo $rp->temperature;
 
-## Currently Accepted Stations
+## Available Stations
 	Male
 	Hanimadhoo
 	Kahdhoo
