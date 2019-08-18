@@ -1,0 +1,23 @@
+{
+    "name": "jinas/moosun",
+    "description": "Simple Interface to interact with maldives meteriology",
+    "type": "library",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Mohamed Jinas",
+            "email": "j@live.mv"
+        }
+    ],
+    "minimum-stability": "dev",
+    "require": {
+        "php": ">=5.4.0"
+    },
+    "autoload": {
+        "psr-4": {
+            "moosun\\": "src/"
+        }
+
+        
+    }
+}
