@@ -1,5 +1,5 @@
 # MoosunMv
-Simple Interface to interact with maldives meteriology
+	Simple Interface to interact with maldives meteriology
 
 ## Installation
 
