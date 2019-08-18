@@ -6,7 +6,6 @@ Simple Interface to interact with maldives meteriology
 	composer require jinas/moosun
 
 ## Basic Usage
-
 	$rp = new MoosunMv('Gan');
 	echo $rp->stationname;
     echo $rp->temperature;
