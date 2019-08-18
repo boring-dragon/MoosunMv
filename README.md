@@ -6,6 +6,8 @@
 	composer require jinas/moosun
 
 ## Basic Usage
+	>You can pass any station name available bellow to get the data
+
 	$rp = new MoosunMv('Gan');
 	echo $rp->stationname;
     echo $rp->temperature;
