@@ -5,7 +5,7 @@
 
 ## Packages used 
 
-    Guzzle
+    *Guzzle
 
 ## Basic Usage
 	>You can pass any station name available bellow to get the data
