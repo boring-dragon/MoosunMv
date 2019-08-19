@@ -1,6 +1,7 @@
 <?php
 namespace moosun;
 
+use GuzzleHttp\Client;
 class MoosunMv
 {
     public $stationname;
@@ -60,20 +61,15 @@ class MoosunMv
         return (bool) @fsockopen($sCheckHost, 80, $iErrno, $sErrStr, 5);
     }
 
-    public function doCurl($uri)
+    public function retrieve($url)
     {
   
         try {
-			$ch = curl_init ($uri);
-			curl_setopt($ch, CURLOPT_HEADER, 0);
-			curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
-			curl_setopt($ch, CURLOPT_BINARYTRANSFER, 1);
-			curl_setopt($ch, CURLOPT_NOBODY, false);
-			$rawdata = curl_exec($ch);
-			curl_close ($ch);
-
-			$removeUTF8BOM = substr($rawdata, 3);
-			$cleanData = stripslashes($removeUTF8BOM);
+			$client = new Client();
+            $response = $client->request('GET', $url);
+            $rawdata = $response->getBody();
+            $removeUTF8BOM = substr($rawdata, 3);
+		    $cleanData = stripslashes($removeUTF8BOM);
 			$this->api_return = (array) json_decode($cleanData);
 		
  		} catch (Exception $e) {			
@@ -131,9 +127,9 @@ class MoosunMv
     public function getData($url) 
 	{
 
-		$curlUrl = "http://www.meteorology.gov.mv/fetchweather/". $url;
+		$apiUrl = "http://www.meteorology.gov.mv/fetchweather/". $url;
 		
-        $this->doCurl($curlUrl);
+        $this->retrieve($apiUrl);
         
         $this->setValues($this->api_return);
 
