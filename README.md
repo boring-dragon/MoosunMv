@@ -1,5 +1,3 @@
-# MoosunMv
-	Simple Interface to interact with maldives meteriology
 
 ## Installation
 
@@ -51,8 +49,16 @@
     second_icon
 
     >Predicted data of 3rd day
+<<<<<<< HEAD
     third_date
     third_condition
     third_sea
     third_wind
     third_icon
+=======
+    third_date;
+    third_condition;
+    third_sea;
+    third_wind;
+    third_icon;
+>>>>>>> ec6e5f6a67a8ccfa6c99ca148ba474b3327d5c41
