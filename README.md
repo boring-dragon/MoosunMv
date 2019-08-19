@@ -3,6 +3,10 @@
 
 	composer require jinas/moosun
 
+## Packages used 
+
+    Guzzle
+
 ## Basic Usage
 	>You can pass any station name available bellow to get the data
 
