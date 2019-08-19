@@ -4,12 +4,12 @@
 	composer require jinas/moosun
 
 ## Packages used 
-```
-    Guzzle
-```    
+
+Guzzle
+    
 
 ## Basic Usage
-	>You can pass any station name available bellow to get the data
+> You can pass any station name available bellow to get the data
 ```
 	$rp = new MoosunMv('Gan');
 	echo $rp->stationname;
@@ -17,13 +17,11 @@
 ```    
 
 ## Available Stations
-```
-	Male
-	Hanimadhoo
-	Kahdhoo
-	Kaadehdhoo
-	Gan
-```    
+Male
+Hanimadhoo
+Kahdhoo
+Kaadehdhoo
+Gan    
 
 ## Available Objects
 * stationname
