@@ -1,5 +1,5 @@
 <?php
-namespace moosun;
+namespace Jinas\Moosun;
 
 use GuzzleHttp\Client;
 class MoosunMv

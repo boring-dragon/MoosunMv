@@ -1,5 +1,5 @@
 <?php
-namespace moosun;
+namespace Jinas\Moosun;
 require '../vendor/autoload.php';
 
 //"Gan", "kaadehdhoo", "Kahdhoo", "Hanimadhoo", "Male" are only available to pass
