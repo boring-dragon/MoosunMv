@@ -46,19 +46,7 @@ class MoosunMv
     //Gan, kaadehdhoo, Kahdhoo, Hanimadhoo, Male
     public function __construct($station = 'Male')
     {
-        $bIsConnected = $this->check_internet_connection();
-        if($bIsConnected) {
-
-            $this->getData($station);
-
-        }else{
-            echo ('Please Connect to internet!!');
-        }
-    }
-
-    public function check_internet_connection($sCheckHost = 'www.google.com')
-    {
-        return (bool) @fsockopen($sCheckHost, 80, $iErrno, $sErrStr, 5);
+        $this->getData($station);
     }
 
     public function retrieve($url)
