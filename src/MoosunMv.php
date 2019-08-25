@@ -69,7 +69,7 @@ class MoosunMv
     public function setValues($data)
     {
         try {
-        //Setting the values from api to the objects in the class
+        //Setting the value from api to the objects in the class
         $this->stationname = $data['station_name'];
         $this->hastide = $data['hastide'];
         $this->sunrise = $data['sunrise'];
