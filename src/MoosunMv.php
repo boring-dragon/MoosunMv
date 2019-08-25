@@ -77,7 +77,7 @@ class MoosunMv
         $this->moonrise = $data['moonrise'];
         $this->moonset = $data['moonset'];
         $this->humidity = $data['humidity'];
-        $this->temperature = $data['temp'];
+        $this->temperature = str_replace('u00b0', '°', $data['temp']);
         $this->description = $data['description'];
         $this->dayicon = $data['dayicon1'];
         $this->nighticon = $data['nighticon1'];
