@@ -63,7 +63,9 @@ class MoosunMv
  		} catch (Exception $e) {			
 			return $this->output('Error', 'Error communicating with Weather API: '.$e->getMessage());
 
-		}
+        }
+        
+        return $this;
     }
 
     public function setValues($data)
@@ -117,10 +119,8 @@ class MoosunMv
 
 		$apiUrl = "http://www.meteorology.gov.mv/fetchweather/". $url;
 		
-        $this->retrieve($apiUrl);
-        
-        $this->setValues($this->api_return);
-
+        $this->retrieve($apiUrl)
+             ->setValues($this->api_return);
     
 	}
 
