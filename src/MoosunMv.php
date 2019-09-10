@@ -43,12 +43,27 @@ class MoosunMv
 
     public $api_return;
 
-    //Gan, kaadehdhoo, Kahdhoo, Hanimadhoo, Male
+    /**
+     * __construct
+     *
+     * @param  mixed $station
+     * 
+     * //Gan, kaadehdhoo, Kahdhoo, Hanimadhoo, Male
+     * @return void
+     */
     public function __construct($station = 'Male')
     {
         $this->getData($station);
     }
 
+    /**
+     * retrieve
+     *
+     * @param  mixed $url
+     *
+     * @return void
+     */
+    
     public function retrieve($url)
     {
   
@@ -68,6 +83,14 @@ class MoosunMv
         return $this;
     }
 
+    /**
+     * setValues
+     *
+     * @param  mixed $data
+     *
+     * @return void
+     */
+    
     public function setValues($data)
     {
         try {
@@ -84,7 +107,7 @@ class MoosunMv
         $this->dayicon = $data['dayicon1'];
         $this->nighticon = $data['nighticon1'];
         $this->rainamount = $data['rainamount'];
-        $this->wind = $data['wind'];
+        $this->wind = strip_tags ($data['wind']);
         $this->sunshine = $data['sunshine'];
 
         //Setting tommorow data
@@ -114,6 +137,14 @@ class MoosunMv
 
     }
 
+    /**
+     * getData
+     *
+     * @param  mixed $url
+     *
+     * @return void
+     */
+    
     public function getData($url) 
 	{
 
