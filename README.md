@@ -6,16 +6,25 @@
 ## Packages used 
 ```
 Guzzle
+Goutte
 ```    
 
-## Basic Usage
+## Basic Usage Weather Data
 > You can pass any station name available bellow to get the data
 
 ```
 $rp = new MoosunMv('Gan');
 echo $rp->stationname;
 echo $rp->temperature;
-```    
+``` 
+
+## Basic Usage Satellite Image scraper
+
+```
+$image = new ImgScraper;
+
+echo $image->satellite_image;
+```
 
 ## Available Stations
 ```
