@@ -148,9 +148,8 @@ class MoosunMv
     public function getData($url) 
 	{
 
-		$apiUrl = "http://www.meteorology.gov.mv/fetchweather/". $url;
-		
-        $this->retrieve($apiUrl)
+        $apiUrl = "http://www.meteorology.gov.mv/fetchweather/". $url;
+		$this->retrieve($apiUrl)
              ->setValues($this->api_return);
     
 	}
