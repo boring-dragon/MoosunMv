@@ -4,10 +4,9 @@ namespace Jinas\Moosun;
 
 use Goutte\Client;
 
-class ImgScraper {
-
+class ImgScraper
+{
     protected $client;
-
     public $satellite_image;
 
 
@@ -31,9 +30,9 @@ class ImgScraper {
      */
     protected function getData()
     {
+
         $crawler = $this->client->request('GET', 'http://www.meteorology.gov.mv/');
         $this->extractData($crawler);
-        
     }
     /**
      * extractData
@@ -48,5 +47,4 @@ class ImgScraper {
             $this->satellite_image = $node->attr('src', "\n");
         });
     }
-    
 }
