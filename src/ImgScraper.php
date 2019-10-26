@@ -3,13 +3,17 @@
 namespace Jinas\Moosun;
 
 use Goutte\Client;
+use Jinas\Moosun\Interfaces\IImgScraper;
+use Jinas\Moosun\Util;
 
-class ImgScraper
+class ImgScraper extends Util implements IImgScraper
 {
+    //storing the configuration data
+    public static $items = array();
+
     protected $client;
+
     public $satellite_image;
-
-
 
     /**
      * __construct
@@ -30,8 +34,8 @@ class ImgScraper
      */
     protected function getData()
     {
-
-        $crawler = $this->client->request('GET', 'http://www.meteorology.gov.mv/');
+        self::load('config');
+        $crawler = $this->client->request('GET', self::$items['Scrap_Url']);
         $this->extractData($crawler);
     }
     /**
