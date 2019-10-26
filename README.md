@@ -1,41 +1,47 @@
 
+# MoosunMv
+
 ## Installation
 
-	composer require jinas/moosun
+ composer require jinas/moosun
 
-## Packages used 
-```
+## Packages used
+
+```cmd
 Guzzle
 Goutte
-```    
+```
 
 ## Basic Usage Weather Data
+
 > You can pass any station name available bellow to get the data
 
-```
+```php
 $rp = new MoosunMv('Gan');
 echo $rp->stationname;
 echo $rp->temperature;
-``` 
+```
 
 ## Basic Usage Satellite Image scraper
 
-```
+```php
 $image = new ImgScraper;
 
 echo $image->satellite_image;
 ```
 
 ## Available Stations
-```
+
+```cmd
 Male
 Hanimadhoo
 Kahdhoo
 Kaadehdhoo
 Gan
-```    
+```
 
 ## Available Objects
+
 * stationname
 * hastide
 * sunrise
