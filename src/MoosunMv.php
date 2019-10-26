@@ -3,9 +3,14 @@
 namespace Jinas\Moosun;
 
 use GuzzleHttp\Client;
+use Jinas\Moosun\Interfaces\IMoosunMv;
+use Jinas\Moosun\Util;
 
-class MoosunMv
+class MoosunMv extends Util implements IMoosunMv
 {
+    //storing the configuration data
+    public static $items = array();
+
     public $stationname;
     public $hastide;
     public $sunrise;
@@ -57,6 +62,7 @@ class MoosunMv
     {
         $this->getData($station);
     }
+
 
     /**
      * retrieve
@@ -146,8 +152,10 @@ class MoosunMv
     protected function getData($station)
     {
 
-        $apiUrl = "http://www.meteorology.gov.mv/fetchweather/" . $station;
-        $this->retrieve($apiUrl)
+        self::load('config');
+
+        $ApiUrl = self::$items['Api_Url'] . $station;
+        $this->retrieve($ApiUrl)
             ->setValues($this->api_return);
     }
 }
