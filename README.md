@@ -3,7 +3,9 @@
 
 ## Installation
 
+```shell
  composer require jinas/moosun
+```
 
 ## Packages used
 
