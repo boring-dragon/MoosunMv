@@ -1,7 +1,6 @@
 <?php
 
 use PHPUnit\Framework\TestCase;
-
 use Jinas\Moosun\ImgScraper;
 
 class ImageScraperTest extends TestCase
