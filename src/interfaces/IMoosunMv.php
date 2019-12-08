@@ -4,6 +4,8 @@ namespace Jinas\Moosun\Interfaces;
 
 interface IMoosunMv
 {
+    public const API_URL = "http://www.meteorology.gov.mv/fetchweather/";
+
     /**
      * __construct
      *

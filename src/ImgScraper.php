@@ -4,13 +4,9 @@ namespace Jinas\Moosun;
 
 use Goutte\Client;
 use Jinas\Moosun\Interfaces\IImgScraper;
-use Jinas\Moosun\Util;
 
-class ImgScraper extends Util implements IImgScraper
+class ImgScraper implements IImgScraper
 {
-    //storing the configuration data
-    public static $items = array();
-
     protected $client;
 
     public $satellite_image;
@@ -32,10 +28,9 @@ class ImgScraper extends Util implements IImgScraper
      *
      * @return void
      */
-    protected function getData()
+    protected function getData() : void
     {
-        self::load('config');
-        $crawler = $this->client->request('GET', self::$items['Scrap_Url']);
+        $crawler = $this->client->request('GET', IImgScraper::Scrap_Url);
         $this->extractData($crawler);
     }
     /**
@@ -45,7 +40,7 @@ class ImgScraper extends Util implements IImgScraper
      *
      * @return void
      */
-    protected function extractData($crawler)
+    protected function extractData($crawler) : void
     {
         $crawler->filter('.slides a img')->eq(0)->each(function ($node) {
             $this->satellite_image = $node->attr('src', "\n");

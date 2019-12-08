@@ -4,12 +4,10 @@ namespace Jinas\Moosun;
 
 use GuzzleHttp\Client;
 use Jinas\Moosun\Interfaces\IMoosunMv;
-use Jinas\Moosun\Util;
+use Exception;
 
-class MoosunMv extends Util implements IMoosunMv
+class MoosunMv implements IMoosunMv
 {
-    //storing the configuration data
-    public static $items = array();
 
     public $stationname;
     public $hastide;
@@ -83,7 +81,8 @@ class MoosunMv extends Util implements IMoosunMv
             $cleanData = stripslashes($removeUTF8BOM);
             $this->api_return = (array) json_decode($cleanData);
         } catch (Exception $e) {
-            return $this->output('Error', 'Error communicating with Weather API: ' . $e->getMessage());
+
+            throw new \Exception('Error communicating with Weather API');
         }
 
         return $this;
@@ -100,7 +99,6 @@ class MoosunMv extends Util implements IMoosunMv
     protected function setValues($data)
     {
         try {
-            //Setting the value from api to the objects in the class
             $this->stationname = $data['station_name'];
             $this->hastide = $data['hastide'];
             $this->sunrise = $data['sunrise'];
@@ -115,21 +113,18 @@ class MoosunMv extends Util implements IMoosunMv
             $this->rainamount = $data['rainamount'];
             $this->wind = strip_tags($data['wind']);
             $this->sunshine = $data['sunshine'];
-
             //Setting tommorow data
             $this->first_date = $data['1_date'];
             $this->first_condition = $data['1_cond'];
             $this->first_sea = $data['1_sea'];
             $this->first_wind = $data['1_wind'];
             $this->first_icon = $data['1_icon'];
-
             //Setting Day after tommorow data
             $this->second_date = $data['2_date'];
             $this->second_condition = $data['2_cond'];
             $this->second_sea = $data['2_sea'];
             $this->second_wind = $data['2_wind'];
             $this->second_icon = $data['2_icon'];
-
             // Day 3 data
             $this->third_date = $data['3_date'];
             $this->third_condition = $data['3_cond'];
@@ -137,10 +132,12 @@ class MoosunMv extends Util implements IMoosunMv
             $this->third_wind = $data['3_wind'];
             $this->third_icon = $data['3_icon'];
         } catch (Exception $e) {
-            return $this->output('Error', 'Error communicating with Weather API: ' . $e->getMessage());
-        }
-    }
 
+            throw new \Exception('Error communicating with Weather API');
+        }
+
+        return $this;
+    }
     /**
      * getData
      *
@@ -152,9 +149,7 @@ class MoosunMv extends Util implements IMoosunMv
     protected function getData($station)
     {
 
-        self::load('config');
-
-        $ApiUrl = self::$items['Api_Url'] . $station;
+        $ApiUrl = IMoosunMv::API_URL . $station;
         $this->retrieve($ApiUrl)
             ->setValues($this->api_return);
     }
