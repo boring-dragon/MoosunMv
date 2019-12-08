@@ -2,11 +2,13 @@
 
 use PHPUnit\Framework\TestCase;
 
+use Jinas\Moosun\ImgScraper;
+
 class ImageScraperTest extends TestCase
 {
     public function testImageScraperShouldReturnAValidUrl()
     {
-        $scraper = new \Jinas\Moosun\ImgScraper();
+        $scraper = new ImgScraper;
         
         $regex = "((https?|ftp)\:\/\/)?"; // SCHEME 
         $regex .= "([a-z0-9+!*(),;?&=\$_.-]+(\:[a-z0-9+!*(),;?&=\$_.-]+)?@)?"; // User and Pass 
@@ -21,7 +23,7 @@ class ImageScraperTest extends TestCase
 
     public function testImageScraperShouldReturnAValidJPGImage()
     {
-        $scraper = new \Jinas\Moosun\ImgScraper();
+        $scraper = new ImgScraper;
         $this->assertEquals(true, strpos($scraper->satellite_image, '.JPG'));
     }
 }
