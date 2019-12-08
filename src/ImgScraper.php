@@ -5,6 +5,7 @@ namespace Jinas\Moosun;
 use Goutte\Client;
 use Jinas\Moosun\Interfaces\IImgScraper;
 
+
 class ImgScraper implements IImgScraper
 {
     protected $client;
