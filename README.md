@@ -1,4 +1,4 @@
-# MoosunMv
+# :cyclone: MoosunMv :sunny:
 
 [![Latest Stable Version](https://poser.pugx.org/jinas/moosun/v/stable)](https://packagist.org/packages/jinas/moosun)
 [![License](https://poser.pugx.org/jinas/moosun/license)](https://packagist.org/packages/jinas/moosun)
@@ -36,51 +36,47 @@ echo $image->satellite_image;
 
 ## Available Stations
 
-```cmd
-Male
-Hanimadhoo
-Kahdhoo
-Kaadehdhoo
-Gan
-```
+- Male
+- Hanimadhoo
+- Kahdhoo
+- Kaadehdhoo
+- Gan
 
 ## Available Objects
 
-* stationname
-* hastide
-* sunrise
-* sunset
-* moonrise
-* moonset
-* humidity
-* temperature
-* description
-* dayicon
-* nighticon
-* rainamount
-* wind
-* sunshine
-
-> Predicted data of tommorow
-
-* first_date
-* first_condition
-* first_sea
-* first_wind
-* first_icon
+- stationname
+- hastide
+- sunrise
+- sunset
+- moonrise
+- moonset
+- humidity
+- temperature
+- description
+- dayicon
+- nighticon
+- rainamount
+- wind
+- sunshine-
+- Predicted data of tommorow-
+- first_date
+- first_condition
+- first_sea
+- first_wind
+- first_icon
 
  > Predicted data of day after tommorow
 
-* second_date
-* second_condition
-* second_sea
-* second_wind
-* second_icon
+- second_date
+- second_condition
+- second_sea
+- second_wind
+- second_icon
 
 > Predicted data of 3rd day
 
-* third_date
-* third_condition
-* third_sea
-* third_wind
-* third_icon
+- third_date
+- third_condition
+- third_sea
+- third_wind
+- third_icon
