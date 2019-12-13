@@ -1,5 +1,7 @@
-
 # MoosunMv
+
+[![Latest Stable Version](https://poser.pugx.org/jinas/moosun/v/stable)](https://packagist.org/packages/jinas/moosun)
+[![License](https://poser.pugx.org/jinas/moosun/license)](https://packagist.org/packages/jinas/moosun)
 
 ## Installation
 
