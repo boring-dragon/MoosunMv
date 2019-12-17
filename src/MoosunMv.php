@@ -4,7 +4,6 @@ namespace Jinas\Moosun;
 
 use GuzzleHttp\Client;
 use Jinas\Moosun\Interfaces\IMoosunMv;
-use Exception;
 
 class MoosunMv implements IMoosunMv
 {
@@ -53,7 +52,10 @@ class MoosunMv implements IMoosunMv
      *
      * @param  mixed $station
      * 
-     * //Gan, kaadehdhoo, Kahdhoo, Hanimadhoo, Male
+     * Available Stations: Gan, kaadehdhoo, Kahdhoo, Hanimadhoo, Male
+     * 
+     * Getting Male Station data by default.
+     * 
      * @return void
      */
     public function __construct($station = 'Male')
@@ -63,14 +65,16 @@ class MoosunMv implements IMoosunMv
 
 
     /**
-     * retrieve
+     * GetApiReponse
      *
      * @param  mixed $url
+     * 
+     * Getting the json data from meteorology api
      *
      * @return void
      */
 
-    protected function retrieve($url)
+    protected function GetApiReponse($url)
     {
 
         try {
@@ -89,14 +93,16 @@ class MoosunMv implements IMoosunMv
     }
 
     /**
-     * setValues
+     * SetApiResponse
+     * 
+     * Setting the data as objects.
      *
      * @param  mixed $data
      *
      * @return void
      */
 
-    protected function setValues($data)
+    protected function SetApiResponse($data)
     {
         try {
             $this->stationname = $data['station_name'];
@@ -150,7 +156,7 @@ class MoosunMv implements IMoosunMv
     {
 
         $ApiUrl = IMoosunMv::API_URL . $station;
-        $this->retrieve($ApiUrl)
-            ->setValues($this->api_return);
+        $this->GetApiReponse($ApiUrl)
+             ->SetApiResponse($this->api_return);
     }
 }
