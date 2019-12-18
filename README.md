@@ -9,6 +9,10 @@
  composer require jinas/moosun
 ```
 
+## How does this work
+
+Moosunmv library is a wrapper around the API of maldives meteorology. Library helps you to interact with the meteorology stations and get live weather data. The available station names are given below. The library also have a imgscraper class which can scrap the latest satellite image from the maldives meteorology website.
+
 ## Packages used
 
 ```cmd
@@ -18,7 +22,7 @@ Goutte
 
 ## Basic Usage Weather Data
 
-> You can pass any station name available bellow to get the data
+> You can pass any station name available below to get the data
 
 ```php
 $rp = new MoosunMv('Gan');
