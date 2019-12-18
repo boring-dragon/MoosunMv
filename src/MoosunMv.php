@@ -7,7 +7,6 @@ use Jinas\Moosun\Interfaces\IMoosunMv;
 
 class MoosunMv implements IMoosunMv
 {
-
     public $stationname;
     public $hastide;
     public $sunrise;
@@ -51,11 +50,11 @@ class MoosunMv implements IMoosunMv
      * __construct
      *
      * @param  mixed $station
-     * 
+     *
      * Available Stations: Gan, kaadehdhoo, Kahdhoo, Hanimadhoo, Male
-     * 
+     *
      * Getting Male Station data by default.
-     * 
+     *
      * @return void
      */
     public function __construct($station = 'Male')
@@ -68,7 +67,7 @@ class MoosunMv implements IMoosunMv
      * GetApiReponse
      *
      * @param  mixed $url
-     * 
+     *
      * Getting the json data from meteorology api
      *
      * @return void
@@ -76,7 +75,6 @@ class MoosunMv implements IMoosunMv
 
     protected function GetApiReponse($url)
     {
-
         try {
             $client = new Client();
             $response = $client->request('GET', $url);
@@ -85,7 +83,6 @@ class MoosunMv implements IMoosunMv
             $cleanData = stripslashes($removeUTF8BOM);
             $this->api_return = (array) json_decode($cleanData);
         } catch (Exception $e) {
-
             throw new \Exception('Error communicating with Weather API');
         }
 
@@ -94,7 +91,7 @@ class MoosunMv implements IMoosunMv
 
     /**
      * SetApiResponse
-     * 
+     *
      * Setting the data as objects.
      *
      * @param  mixed $data
@@ -138,7 +135,6 @@ class MoosunMv implements IMoosunMv
             $this->third_wind = $data['3_wind'];
             $this->third_icon = $data['3_icon'];
         } catch (Exception $e) {
-
             throw new \Exception('Error communicating with Weather API');
         }
 
@@ -154,7 +150,6 @@ class MoosunMv implements IMoosunMv
 
     protected function getData($station)
     {
-
         $ApiUrl = IMoosunMv::API_URL . $station;
         $this->GetApiReponse($ApiUrl)
              ->SetApiResponse($this->api_return);
