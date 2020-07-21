@@ -2,6 +2,7 @@
 
 [![Latest Stable Version](https://poser.pugx.org/jinas/moosun/v/stable)](https://packagist.org/packages/jinas/moosun)
 [![License](https://poser.pugx.org/jinas/moosun/license)](https://packagist.org/packages/jinas/moosun)
+[![StyleCI](https://github.styleci.io/repos/203064341/shield?branch=master)](https://github.styleci.io/repos/203064341?branch=master)
 
 ## :battery: Installation
 
