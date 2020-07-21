@@ -43,13 +43,12 @@ class MoosunMv implements IMoosunMv
     public $third_wind;
     public $third_icon;
 
-
     public $api_return;
 
     /**
-     * __construct
+     * __construct.
      *
-     * @param  mixed $station
+     * @param mixed $station
      *
      * Available Stations: Gan, kaadehdhoo, Kahdhoo, Hanimadhoo, Male
      *
@@ -62,17 +61,15 @@ class MoosunMv implements IMoosunMv
         $this->getData($station);
     }
 
-
     /**
-     * GetApiReponse
+     * GetApiReponse.
      *
-     * @param  mixed $url
+     * @param mixed $url
      *
      * Getting the json data from meteorology api
      *
      * @return void
      */
-
     protected function GetApiReponse($url)
     {
         try {
@@ -90,15 +87,14 @@ class MoosunMv implements IMoosunMv
     }
 
     /**
-     * SetApiResponse
+     * SetApiResponse.
      *
      * Setting the data as objects.
      *
-     * @param  mixed $data
+     * @param mixed $data
      *
      * @return void
      */
-
     protected function SetApiResponse($data)
     {
         try {
@@ -140,17 +136,17 @@ class MoosunMv implements IMoosunMv
 
         return $this;
     }
+
     /**
-     * getData
+     * getData.
      *
-     * @param  mixed $url
+     * @param mixed $url
      *
      * @return void
      */
-
     protected function getData($station)
     {
-        $ApiUrl = IMoosunMv::API_URL . $station;
+        $ApiUrl = IMoosunMv::API_URL.$station;
         $this->GetApiReponse($ApiUrl)
              ->SetApiResponse($this->api_return);
     }
