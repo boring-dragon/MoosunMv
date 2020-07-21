@@ -5,7 +5,6 @@ namespace Jinas\Moosun;
 use Goutte\Client;
 use Jinas\Moosun\Interfaces\IImgScraper;
 
-
 class ImgScraper implements IImgScraper
 {
     protected $client;
@@ -13,20 +12,20 @@ class ImgScraper implements IImgScraper
     public $satellite_image;
 
     /**
-     * __construct
+     * __construct.
      *
      * @return void
      */
     public function __construct()
     {
-        $this->client = new Client;
+        $this->client = new Client();
 
         $this->getData();
     }
 
     /**
-     * getData
-     * 
+     * getData.
+     *
      * This method is responsible for sending http get request to website to get he html content to scrap.
      *
      * @return void
@@ -38,10 +37,10 @@ class ImgScraper implements IImgScraper
     }
 
     /**
-     * extractData
+     * extractData.
      *
-     * @param  mixed $crawler
-     * 
+     * @param mixed $crawler
+     *
      * This method is responsible for scraping the last satellite image in the webpage
      *
      * @return void

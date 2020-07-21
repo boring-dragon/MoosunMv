@@ -4,12 +4,12 @@ namespace Jinas\Moosun\Interfaces;
 
 interface IMoosunMv
 {
-    public const API_URL = "http://www.meteorology.gov.mv/fetchweather/";
+    public const API_URL = 'http://www.meteorology.gov.mv/fetchweather/';
 
     /**
-     * __construct
+     * __construct.
      *
-     * @param  mixed $station
+     * @param mixed $station
      *
      * @return void
      */
